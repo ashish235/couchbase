@@ -17,4 +17,6 @@ RUN chmod 775 /entrypoint.sh
 
 USER 1001
 
+ENTRYPOINT ["sleep", "100000000"]
+
 #USER couchbase:couchbase
