@@ -8,15 +8,17 @@ FROM couchbase:community-6.6.0
 
 #RUN chown -R couchbase:couchbase /usr/sbin/runsvdir-start
 
-RUN chown -R 1001:0 /opt/couchbase
+#RUN chown -R 1001:0 /opt/couchbase
 
 RUN chgrp -R 0 /opt/couchbase && \
     chmod -R g=u /opt/couchbase
 
+#RUN chgrp -R 0 /run && chmod -R g=u /run
+
 RUN chmod 775 /entrypoint.sh
 
-USER 1001
+#USER 1001
 
 ENTRYPOINT ["sleep", "100000000"]
 
-#USER couchbase:couchbase
+USER couchbase:couchbase
