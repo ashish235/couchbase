@@ -10,12 +10,12 @@ FROM couchbase:community-6.6.0
 
 #RUN chown -R 1001:0 /opt/couchbase
 
-RUN chgrp -R 0 /opt/couchbase && \
-    chmod -R g=u /opt/couchbase
+RUN chgrp -R 0 /opt/ && \
+    chmod -R g=u /opt/
 
 #RUN chgrp -R 0 /run && chmod -R g=u /run
 
-RUN chmod 775 /entrypoint.sh
+#RUN chmod 775 /entrypoint.sh
 
 #USER 1001
 
