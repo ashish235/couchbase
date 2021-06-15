@@ -4,4 +4,6 @@ FROM couchbase:community-6.6.0
 RUN chown -R couchbase:couchbase /opt/couchbase/var
 RUN chown -R couchbase:couchbase /etc/
 
+RUN chown -R couchbase:couchbase /usr/sbin/runsvdir-start
+
 USER couchbase:couchbase
