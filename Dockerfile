@@ -13,12 +13,14 @@ FROM couchbase:community-6.6.0
 RUN chgrp -R 0 /opt/ && \
     chmod -R g=u /opt/
 
+RUN chown -R 1001:0 /opt/
+
 #RUN chgrp -R 0 /run && chmod -R g=u /run
 
 #RUN chmod 775 /entrypoint.sh
 
-#USER 1001
+USER 1001
 
 ENTRYPOINT ["sleep", "100000000"]
 
-USER couchbase:couchbase
+#USER couchbase:couchbase
