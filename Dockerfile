@@ -10,8 +10,8 @@ FROM couchbase:community-6.6.0
 
 #RUN chown -R 1001:0 /opt/couchbase
 
-RUN chgrp -R 0 /opt/
-RUN chmod -R g=u /opt/
+RUN chgrp -R 0 /opt/couchbase/var
+RUN chmod -R g=u /opt/couchbase/var
 
 #RUN chown -R 1000:0 /opt/
 
@@ -21,6 +21,7 @@ RUN chmod -R g=u /opt/
 
 USER 1000
 
+VOLUME /opt/couchbase/var
 ENTRYPOINT ["sleep", "100000000"]
 
 #USER couchbase:couchbase
